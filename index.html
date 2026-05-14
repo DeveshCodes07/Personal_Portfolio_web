@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devesh Kumar - Full Stack Java Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0ea5e9;
+            --secondary: #1e293b;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
+        .card {
+            background-color: #1e293b;
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(14, 165, 233, 0.1);
+        }
+        .skill-bar {
+            height: 8px;
+            border-radius: 4px;
+            background-color: #334155;
+        }
+        .skill-progress {
+            height: 100%;
+            border-radius: 4px;
+            background-color: var(--primary);
+        }
+        .contact-input {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            transition: all 0.3s ease;
+        }
+        .contact-input:focus {
+            border-color: var(--primary);
+            outline: none;
+        }
+        .btn-primary {
+            background-color: var(--primary);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #0284c7;
+        }
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover:after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-slate-800/50 backdrop-blur-md fixed w-full z-20 border-b border-slate-700">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-xl font-bold text-sky-400">Devesh<span class="text-white">Kumar</span></a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-gray-300 hover:text-white">Home</a>
+                    <a href="#education" class="nav-link text-gray-300 hover:text-white">Education</a>
+                    <a href="#skills" class="nav-link text-gray-300 hover:text-white">Skills</a>
+                    <a href="#achievements" class="nav-link text-gray-300 hover:text-white">Achievements</a>
+                    <a href="#contact" class="nav-link text-gray-300 hover:text-white">Contact</a>
+                </div>
+                <button class="md:hidden text-gray-300 focus:outline-none">
+                    <i data-feather="menu"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+        <div class="container mx-auto flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Hi, I'm <span class="text-sky-400">Devesh Kumar</span></h1>
+                <h2 class="text-xl md:text-2xl text-gray-400 mb-6">Full Stack Java Developer | Spring Boot | React.js</h2>
+                <p class="text-gray-400 mb-8 leading-relaxed">Enthusiastic Full Stack Java Developer with hands-on experience in Spring Boot, React.js, REST APIs, and MySQL. Passionate about building scalable applications and solving real-world problems through technology.</p>
+                <div class="flex space-x-4">
+                    <a href="#contact" class="btn-primary text-white px-6 py-3 rounded-lg font-medium">Hire Me</a>
+                    <a href="assest/DeveshCV.pdf"download="assest/Devesh_Resume.pdf" class="border border-sky-400 text-sky-400 px-6 py-3 rounded-lg font-medium">Download CV</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative">
+                    <div class="w-64 h-64 md:w-80 md:h-80 bg-slate-700 rounded-full overflow-hidden border-4 border-sky-400">
+                        <img src="assest/dev.jpg" alt="Devesh Kumar" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute -bottom-5 -right-5 bg-slate-800 p-3 rounded-lg shadow-lg border border-slate-700">
+                        <p class="text-sm text-gray-300">📍 Noida, India</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-16 bg-slate-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-12 text-center section-title">Education</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Education Card 1 -->
+                <div class="card p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-slate-700 flex items-center justify-center mr-4">
+                            <i data-feather="book" class="text-sky-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">MCA, Computer Science</h3>
+                            <p class="text-gray-400">ABES Engineering College</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4">August 2025 – September 2027</p>
+                    <p class="text-gray-300">Currently pursuing Master of Computer Applications with focus on advanced software development and system design.</p>
+                </div>
+                
+                <!-- Education Card 2 -->
+                <div class="card p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-slate-700 flex items-center justify-center mr-4">
+                            <i data-feather="book-open" class="text-sky-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">BCA, Computer Programming</h3>
+                            <p class="text-gray-400">CCS University</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4">March 2021 – September 2024</p>
+                    <p class="text-gray-300">Completed Bachelor of Computer Applications with high honors, specializing in programming fundamentals and database management.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-12 text-center section-title">Technical Skills</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <!-- Technical Skills -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6 text-sky-400">Development Skills</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>Java & Spring Boot</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>React.js</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>REST API Development</span>
+                                <span>88%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>MySQL</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Soft Skills -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6 text-sky-400">Soft Skills</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>Problem Solving</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>Team Collaboration</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>Communication</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>Time Management</span>
+                                <span>88%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 88%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Skill Tags -->
+            <div class="mt-8">
+                <h3 class="text-xl font-bold mb-6 text-sky-400 text-center">Other Technologies</h3>
+                <div class="flex flex-wrap justify-center gap-3">
+                    <span class="px-4 py-2 bg-slate-700 rounded-full text-sm">Hibernate</span>
+                    <span class="px-4 py-2 bg-slate-700 rounded-full text-sm">JPA</span>
+                    <span class="px-4 py-2 bg-slate-700 rounded-full text-sm">JavaScript</span>
+                    <span class="px-4 py-2 bg-slate-700 rounded-full text-sm">HTML5/CSS3</span>
+                    <span class="px-4 py-2 bg-slate-700 rounded-full text-sm">Tailwind CSS</span>
+                    <span class="px-4 py-2 bg-slate-700 rounded-full text-sm">Git</span>
+                    <span class="px-4 py-2 bg-slate-700 rounded-full text-sm">Docker</span>
+                    <span class="px-4 py-2 bg-slate-700 rounded-full text-sm">AWS Basics</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="py-16 bg-slate-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-12 text-center section-title">Achievements & Hobbies</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Achievement 1 -->
+                <div class="card p-6 rounded-lg">
+                    <div class="w-12 h-12 rounded-full bg-slate-700 flex items-center justify-center mb-4 text-sky-400">
+                        <i data-feather="award"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">BCA Honors</h3>
+                    <p class="text-gray-400">Graduated with high honors from CCS University, ranking in top 10% of class.</p>
+                </div>
+                
+                <!-- Achievement 2 -->
+                <div class="card p-6 rounded-lg">
+                    <div class="w-12 h-12 rounded-full bg-slate-700 flex items-center justify-center mb-4 text-sky-400">
+                        <i data-feather="code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Hackathon Winner</h3>
+                    <p class="text-gray-400">Won first prize in university-level coding competition for developing a smart inventory system.</p>
+                </div>
+                
+                <!-- Achievement 3 -->
+                <div class="card p-6 rounded-lg">
+                    <div class="w-12 h-12 rounded-full bg-slate-700 flex items-center justify-center mb-4 text-sky-400">
+                        <i data-feather="book"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Tech Blogging</h3>
+                    <p class="text-gray-400">Published technical articles on Medium about Java best practices and Spring Boot optimization.</p>
+                </div>
+                
+                <!-- Hobby 1 -->
+                <div class="card p-6 rounded-lg">
+                    <div class="w-12 h-12 rounded-full bg-slate-700 flex items-center justify-center mb-4 text-sky-400">
+                        <i data-feather="music"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Music Production</h3>
+                    <p class="text-gray-400">Creating electronic music tracks in free time using FL Studio and Ableton Live.</p>
+                </div>
+                
+                <!-- Hobby 2 -->
+                <div class="card p-6 rounded-lg">
+                    <div class="w-12 h-12 rounded-full bg-slate-700 flex items-center justify-center mb-4 text-sky-400">
+                        <i data-feather="camera"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Photography</h3>
+                    <p class="text-gray-400">Amateur photographer with focus on urban landscapes and street photography.</p>
+                </div>
+                
+                <!-- Hobby 3 -->
+                <div class="card p-6 rounded-lg">
+                    <div class="w-12 h-12 rounded-full bg-slate-700 flex items-center justify-center mb-4 text-sky-400">
+                        <i data-feather="cpu"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">AI Exploration</h3>
+                    <p class="text-gray-400">Experimenting with machine learning models and AI applications in personal projects.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-12 text-center section-title">Get In Touch</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-xl font-bold mb-6 text-sky-400">Contact Information</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center mr-4 mt-1 text-sky-400">
+                                <i data-feather="mail"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Email</h4>
+                                <a href="mailto:deveshkuma03@gmail.com" class="text-gray-400 hover:text-sky-400 transition">deveshkuma03@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center mr-4 mt-1 text-sky-400">
+                                <i data-feather="phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Phone</h4>
+                                <a href="tel:+917895257427" class="text-gray-400 hover:text-sky-400 transition">+91 7895257427</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center mr-4 mt-1 text-sky-400">
+                                <i data-feather="linkedin"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">LinkedIn</h4>
+                                <a href="https://www.linkedin.com/in/deveshkumar07" target="_blank" class="text-gray-400 hover:text-sky-400 transition">linkedin.com/in/deveshkumar07</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center mr-4 mt-1 text-sky-400">
+                                <i data-feather="map-pin"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Location</h4>
+                                <p class="text-gray-400">Noida, Uttar Pradesh, India</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-6 text-sky-400">Send Me a Message</h3>
+                    <form class="space-y-4">
+                        <div>
+                            <input type="text" placeholder="Your Name" class="contact-input w-full px-4 py-3 rounded-lg">
+                        </div>
+                        <div>
+                            <input type="email" placeholder="Your Email" class="contact-input w-full px-4 py-3 rounded-lg">
+                        </div>
+                        <div>
+                            <input type="text" placeholder="Subject" class="contact-input w-full px-4 py-3 rounded-lg">
+                        </div>
+                        <div>
+                            <textarea placeholder="Your Message" rows="4" class="contact-input w-full px-4 py-3 rounded-lg"></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary text-white px-6 py-3 rounded-lg font-medium w-full">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 py-8 border-t border-slate-700">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2025 Devesh Kumar. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="https://github.com/DeveshCodes07" class="text-gray-400 hover:text-sky-400 transition">
+                        <i data-feather="github"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-sky-400 transition">
+                        <i data-feather="twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-sky-400 transition">
+                        <i data-feather="instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/devesh-kumar07/" class="text-gray-400 hover:text-sky-400 transition">
+                        <i data-feather="linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        feather.replace();
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
